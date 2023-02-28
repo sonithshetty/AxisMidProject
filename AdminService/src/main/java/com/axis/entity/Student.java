@@ -7,24 +7,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Student {
 	
 	@Id
-	private int id;
+	private Long id;
 //	@Id
-	private int school_id;
+	private Long school_id;
 	private String name;
 	private String email;
 	private String password;
 	private String std;
 	private boolean feesPaid;
-	private int feesTotal = 15000;
-	private int fees;
-	private int remainingFees;
+	private double feesTotal = 15000;
+	private double fees;
+	private double remainingFees;
 
 	public Student() {
 		super();
 	}
-	
-	public Student(int id, int school_id, String name, String email, String password, String std,
-                   boolean feesPaid, int feesTotal, int fees, int remainingFees) {
+
+	public Student(Long id, Long school_id, String name, String email, String password, String std, boolean feesPaid,
+			double feesTotal, double fees, double remainingFees) {
 		super();
 		this.id = id;
 		this.school_id = school_id;
@@ -38,21 +38,28 @@ public class Student {
 		this.remainingFees = remainingFees;
 	}
 
-	public int getid() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setid(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public int getSchool_id() {
+	public Long getSchool_id() {
 		return school_id;
 	}
 
-
-	public void setSchool_id(int school_id) {
+	public void setSchool_id(Long school_id) {
 		this.school_id = school_id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -79,62 +86,43 @@ public class Student {
 		this.std = std;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public boolean getFeesPaid() {
+	public boolean isFeesPaid() {
 		return feesPaid;
 	}
 
-	public int getFeesTotal() {
+	public void setFeesPaid(boolean feesPaid) {
+		this.feesPaid = feesPaid;
+	}
+
+	public double getFeesTotal() {
 		return feesTotal;
 	}
-		 
-//	public void payFees(int fees) {
-//		
-//		if(feesTotal == fees) {
-//			feesPaid = true;
-//		    School.updateTotalMoneyEarned(fees);
-//		}else {
-//			feesPaid = true;
-//			feesTotal = feesTotal - fees;
-//			School.updateTotalMoneyEarned(feesTotal);
-//		}
-//	    
-//	}
-//	
-//	public int getRemainingFees() {
-//	    return feesTotal - fees;
-//	}
-	
-	public int getRemainingFees() {
-		return remainingFees;
+
+	public void setFeesTotal(double feesTotal) {
+		this.feesTotal = feesTotal;
 	}
 
-	public void setRemainingFees(int remainingFees) {
-		if(remainingFees == 0) {
-			System.out.println("Fees Fully Paid");
-		}else {
-			
-			this.remainingFees = feesTotal - fees;
-		}
-	}
-
-	public int getFees() {
+	public double getFees() {
 		return fees;
 	}
 
-	public void setFees(int fees) {
+	public void setFees(double fees) {
 		this.fees = fees;
+	}
+
+	public double getRemainingFees() {
+		return remainingFees;
+	}
+
+	public void setRemainingFees(double remainingFees) {
+		this.remainingFees = remainingFees;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", school_id=" + school_id + ", name=" + name + ", email=" + email
-				+ ", password=" + password + ", std=" + std + ", feesPaid=" + feesPaid + ", feesTotal=" + feesTotal
-				+ ", fees=" + fees + ", remainingFees=" + remainingFees + "]";
+		return "Student [id=" + id + ", school_id=" + school_id + ", name=" + name + ", email=" + email + ", password="
+				+ password + ", std=" + std + ", feesPaid=" + feesPaid + ", feesTotal=" + feesTotal + ", fees=" + fees
+				+ ", remainingFees=" + remainingFees + "]";
 	}
-
 	
 }

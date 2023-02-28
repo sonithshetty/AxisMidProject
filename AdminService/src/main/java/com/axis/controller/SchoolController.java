@@ -75,16 +75,15 @@ public class SchoolController {
     }
     
     @GetMapping("/school/allTeachers/{id}")
-    public Teacher getAllTeacherBySchoolId(){
-    	String sort = "id";
-        String url = "http://StudentTeacher/teachers/{sort}";
-        Teacher teacherList = restTemplate.getForObject(url, Teacher.class, sort);
+    public Teacher getAllTeacherBySchoolId(@PathVariable Long id){
+        String url = "http://StudentTeacher/teachers/"+ id;
+        Teacher teacherList = restTemplate.getForObject(url, Teacher.class);
         return teacherList;
     }
     
     @GetMapping("/school/allStudents/{id}")
-    public Student getAllStudentsBySchoolId(){
-    	String url = "http://StudentTeacher/students/{id}";
+    public Student getAllStudentsBySchoolId(@PathVariable Long id){
+    	String url = "http://StudentTeacher/students/"+ id;
     	Student studentsList = restTemplate.getForObject(url, Student.class);
     	return studentsList;
     }
