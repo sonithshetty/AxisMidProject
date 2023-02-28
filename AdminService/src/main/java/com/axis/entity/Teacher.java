@@ -6,8 +6,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Teacher")
 public class Teacher {
 	
-	private Long id;
 	@Id
+	private Long id;
+//	@Id
 	private Long school_id;
 	private String firstName;
 	private String lastName;

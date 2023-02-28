@@ -34,9 +34,9 @@ public class SchoolController {
         return ResponseEntity.ok(createdSchool);
     }
 
-    @GetMapping("/school/{id}")
-    public ResponseEntity<School> getSchoolById(@PathVariable Long id) {
-        School school = schoolService.getSchoolById(id);
+    @GetMapping("/school/{school_id}")
+    public ResponseEntity<School> getSchoolById(@PathVariable Long school_id) {
+        School school = schoolService.getSchoolById(school_id);
         if (school == null) {
             return ResponseEntity.notFound().build();
         }
@@ -49,14 +49,14 @@ public class SchoolController {
         return ResponseEntity.ok(schools);
     }
     
-    @PutMapping("/school/{id}")
-    ResponseEntity<School> updateSchoolById(@PathVariable Long id, @RequestBody School school){
-		return new ResponseEntity<School>(schoolService.updateSchoolById(id, school), HttpStatus.OK);
+    @PutMapping("/school/{school_id}")
+    ResponseEntity<School> updateSchoolById(@PathVariable Long school_id, @RequestBody School school){
+		return new ResponseEntity<School>(schoolService.updateSchoolById(school_id, school), HttpStatus.OK);
 	}
 
-    @DeleteMapping("/school/{id}")
-    public ResponseEntity<Void> deleteSchoolById(@PathVariable Long id) {
-        schoolService.deleteSchoolById(id);
+    @DeleteMapping("/school/{school_id}")
+    public ResponseEntity<Void> deleteSchoolById(@PathVariable Long school_id) {
+        schoolService.deleteSchoolById(school_id);
         return ResponseEntity.noContent().build();
     }
 
@@ -74,18 +74,18 @@ public class SchoolController {
     	return studentsList;    	
     }
     
-    @GetMapping("/school/allTeachers/{school_id}")
-    public List<Teacher> getAllTeacherBySchoolId(){
-    	String sort = "school_id";
+    @GetMapping("/school/allTeachers/{id}")
+    public Teacher getAllTeacherBySchoolId(){
+    	String sort = "id";
         String url = "http://StudentTeacher/teachers/{sort}";
-        List<Teacher> teacherList = restTemplate.getForObject(url, List.class, sort);
+        Teacher teacherList = restTemplate.getForObject(url, Teacher.class, sort);
         return teacherList;
     }
     
-    @GetMapping("/school/allStudents/{school_id}")
-    public List<Student> getAllStudentsBySchoolId(){
-    	String url = "http://StudentTeacher/students/{school_id}";
-    	List<Student> studentsList = restTemplate.getForObject(url, List.class);
-    	return studentsList;    	
+    @GetMapping("/school/allStudents/{id}")
+    public Student getAllStudentsBySchoolId(){
+    	String url = "http://StudentTeacher/students/{id}";
+    	Student studentsList = restTemplate.getForObject(url, Student.class);
+    	return studentsList;
     }
 }

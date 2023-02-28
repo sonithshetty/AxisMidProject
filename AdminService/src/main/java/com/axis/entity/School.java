@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class School {
 	
 	@Id
-	private Long id;
+	private Long school_id;
 	private Long totalMoneyEarned;
 	private Long totalMoneySpent;
 	private String schoolName;
@@ -15,19 +15,19 @@ public class School {
 	public School() {
 		super();
 	}
-	public School(Long id, Long totalMoneyEarned, Long totalMoneySpent, String schoolName, String schoolAddr) {
+	public School(Long school_id, Long totalMoneyEarned, Long totalMoneySpent, String schoolName, String schoolAddr) {
 		super();
-		this.id = id;
+		this.school_id = school_id;
 		this.totalMoneyEarned = totalMoneyEarned;
 		this.totalMoneySpent = totalMoneySpent;
 		this.schoolName = schoolName;
 		this.schoolAddr = schoolAddr;
 	}
-	public Long getId() {
-		return id;
+	public Long getSchool_id() {
+		return school_id;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setSchool_id(Long school_id) {
+		this.school_id = school_id;
 	}
 	public Long getTotalMoneyEarned() {
 		return totalMoneyEarned;
@@ -53,4 +53,10 @@ public class School {
 	public void setSchoolAddr(String schoolAddr) {
 		this.schoolAddr = schoolAddr;
 	}
+	@Override
+	public String toString() {
+		return "School [school_id=" + school_id + ", totalMoneyEarned=" + totalMoneyEarned + ", totalMoneySpent="
+				+ totalMoneySpent + ", schoolName=" + schoolName + ", schoolAddr=" + schoolAddr + "]";
+	}
+	
 }

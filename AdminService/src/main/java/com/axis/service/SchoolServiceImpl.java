@@ -21,9 +21,9 @@ public class SchoolServiceImpl implements SchoolService{
 	}
 
 	@Override
-	public School getSchoolById(Long id) {
+	public School getSchoolById(Long school_id) {
 		// TODO Auto-generated method stub
-		return schoolRepository.findById(id).get();
+		return schoolRepository.findById(school_id).get();
 	}
 
 	@Override
@@ -33,15 +33,15 @@ public class SchoolServiceImpl implements SchoolService{
 	}
 
 	@Override
-	public School updateSchoolById(Long id, School school) {
+	public School updateSchoolById(Long school_id, School school) {
 		// TODO Auto-generated method stub
 		return schoolRepository.save(school);
 	}
 
 	@Override
-	public void deleteSchoolById(Long id) {
+	public void deleteSchoolById(Long school_id) {
 		// TODO Auto-generated method stub
-		schoolRepository.deleteById(id);
+		schoolRepository.deleteById(school_id);
 	}
 
 }
