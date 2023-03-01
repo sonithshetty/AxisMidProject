@@ -20,11 +20,22 @@ public class Teacher {
 		
 	}
 	
-	public Long getid() {
+	
+	public Long getId() {
 		return id;
 	}
 
-	public void setid(Long id) {
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public Long getTeacher_id() {
+		return id;
+	}
+
+	public void setTeacher_id(Long id) {
 		this.id = id;
 	}
 	
@@ -86,7 +97,7 @@ public class Teacher {
 	
 
 	public Teacher(Long id, Long school_id, String firstName, String lastName, String email, String password,
-                   Long salaryEarned) {
+			Long salaryEarned) {
 		super();
 		this.id = id;
 		this.school_id = school_id;
