@@ -1,39 +1,25 @@
-import { useNavigate } from "react-router-dom";
-import classes from "./TeacherLogin.module.css";
+import React from "react";
+import classes from "./AdminLogin.module.css";
+import { Form, Button } from "semantic-ui-react";
 
 const TeacherLogin = () => {
-  const navigate = useNavigate();
   return (
-    <div className={classes.container}>
-      <h1>Teacher Login</h1>
+    <div className={classes.main}>
       <div>
-        <form>
-          <div className={classes.row}>
-            <div className={classes.col}>
-              <label className={classes.label1} for="email">
-                <b>Email : </b>
-              </label>
-              <input type="email" placeholder="Enter Email" name="email" />
-            </div>
-          </div>
-          <div className={classes.row}>
-            <div className={classes.col}>
-              <label className={classes.label2} for="psw">
-                <b>Password : </b>
-              </label>
-              <input type="password" placeholder="Enter Password" name="psw" />
-            </div>
-          </div>
-          <div className={classes.row}>
-            <button
-              onClick={() => {
-                navigate("/teacher-home");
-              }}
-            >
-              Submit
-            </button>
-          </div>
-        </form>
+        <h3>Teacher Login</h3>
+      </div>
+      <div>
+        <Form>
+          <Form.Field>
+            <label>Email</label>
+            <input placeholder="Enter your email" />
+          </Form.Field>
+          <Form.Field>
+            <label>Password</label>
+            <input placeholder="Enter your password" />
+          </Form.Field>
+          <Button type="submit">Submit</Button>
+        </Form>
       </div>
     </div>
   );

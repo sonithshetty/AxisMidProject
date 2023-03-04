@@ -7,6 +7,12 @@ import TeacherLogin from "./components/TeacherLogin";
 import AdminHome from "./components/AdminHome";
 import StudentHome from "./components/StudentHome";
 import TeacherHome from "./components/TeacherHome";
+import CreateTeacher from "./components/create/CreateTeacher";
+import CreateStudent from "./components/create/CreateStudent";
+import ReadTeacher from "./components/read/ReadTeacher";
+import ReadStudent from "./components/read/ReadStudent";
+import UpdateTeacher from "./components/update/UpdateTeacher";
+import UpdateStudent from "./components/update/UpdateStudent";
 
 function App() {
   return (
@@ -17,6 +23,12 @@ function App() {
         <Route path="/student-login" element={<StudentLogin />} />
         <Route path="/teacher-login" element={<TeacherLogin />} />
         <Route path="/admin-home" element={<AdminHome />} />
+        <Route path="/add-teacher" element={<CreateTeacher />} />
+        <Route path="/add-student" element={<CreateStudent />} />
+        <Route path="/show-teacher" element={<ReadTeacher />} />
+        <Route path="/show-student" element={<ReadStudent />} />
+        <Route path="/update-teacher" element={<UpdateTeacher />} />
+        <Route path="/update-student" element={<UpdateStudent />} />
         <Route path="/student-home" element={<StudentHome />} />
         <Route path="/teacher-home" element={<TeacherHome />} />
       </Routes>

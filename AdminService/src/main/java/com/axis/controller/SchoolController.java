@@ -156,7 +156,24 @@ public class SchoolController {
         System.out.println("this is totalfund");
 
         // Save the calculated values to the database or perform any other necessary operations
-        double totalFunds = totalMoneyEarned - totalMoneySpent;
-        System.out.println(totalFunds);
+        // Create a MongoDB client that connects to your MongoDB server
+//        MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+//
+//        // Get the database
+//        MongoDatabase database = mongoClient.getDatabase("mydatabase");
+//
+//        // Get the collection
+//        MongoCollection<Document> collection = database.getCollection("total_funds");
+//
+//        // Create a document with the totalMoneyEarned and totalMoneySpent values
+//        Document document = new Document()
+//                .append("totalMoneyEarned", totalMoneyEarned)
+//                .append("totalMoneySpent", totalMoneySpent);
+//
+//        // Insert the document into the collection
+//        collection.insertOne(document);
+//        double totalFunds = totalMoneyEarned - totalMoneySpent;
+//        System.out.println(totalFunds);
+        
     }
 }

@@ -8,21 +8,18 @@ const Home = () => {
         <h1>MONEY MANAGEMENT SYSTEM</h1>
       </div>
       <div className={classes.navbar}>
-        <a>
-          <Link to={"/admin-login"} className={classes.ulist1}>
-            Admin Login
-          </Link>
-        </a>
-        <a>
-          <Link to={"/student-login"} className={classes.ulist1}>
-            Student Login
-          </Link>
-        </a>
-        <a>
-          <Link to={"/teacher-login"} className={classes.ulist1}>
-            Teacher Login
-          </Link>
-        </a>
+        <Link to={"/admin-login"} className={classes.ulist1}>
+          Admin Login
+        </Link>
+
+        <Link to={"/student-login"} className={classes.ulist1}>
+          Student Login
+        </Link>
+
+        <Link to={"/teacher-login"} className={classes.ulist1}>
+          Teacher Login
+        </Link>
+
         <h4>Sonit Shetty - Axis11JFSB1117</h4>
       </div>
       <div className={classes.main}>
